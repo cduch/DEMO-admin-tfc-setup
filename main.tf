@@ -56,16 +56,18 @@ resource "tfe_team" "devteam" {
   name         = "${var.prefix}-developer"
   organization = var.organization_name
   organization_access {
-    manage_policies = true
-    manage_policy_overrides = true
+    manage_policies = false
+    manage_policy_overrides = false
   }
 }
 
+/*
 resource "tfe_organization_membership" "developermembership" {
   organization = var.organization_name
   for_each     = var.developers
   email        = each.key
 }
+*/
 
 resource "tfe_team_organization_members" "devteammembers" {
   team_id = tfe_team.devteam.id
