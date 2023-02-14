@@ -3,16 +3,33 @@ provider "tfe" {
   organization = var.organization_name
 }
 
-
 /*
 *
-* ADMIN TEAM
+* PROJECT STRUCTURE
 *
 */
 
 resource "tfe_project" "adminproject" {
   name = "${var.prefix}-Admin"
 }
+
+resource "tfe_project" "awsproject" {
+  name = "${var.prefix}-AWS"
+}
+
+resource "tfe_project" "azureproject" {
+  name = "${var.prefix}-AZURE"
+}
+
+resource "tfe_project" "dcproject" {
+  name = "${var.prefix}-DC"
+}
+
+/*
+*
+* ADMIN TEAM
+*
+*/
 
 resource "tfe_team" "adminteam" {
   name         = "${var.prefix}-admins"
