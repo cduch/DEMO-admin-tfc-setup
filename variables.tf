@@ -1,5 +1,6 @@
 variable "apitoken" {
     description = "Token for TF API"
+    sensitive = true
 }
 
 variable "organization_name" {
