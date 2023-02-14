@@ -11,11 +11,11 @@ provider "tfe" {
 */
 
 resource "tfe_project" "adminproject" {
-  name = var.prefix+"-Admin"
+  name = "${var.prefix}-Admin"
 }
 
 resource "tfe_team" "adminteam" {
-  name         = var.prefix+"-admins"
+  name         = "${var.prefix}-admins"
   organization = var.organization_name
   organization_access {
     manage_vcs_settings = true
@@ -36,7 +36,7 @@ resource "tfe_team" "adminteam" {
 */
 
 resource "tfe_team" "secteam" {
-  name         = var.prefix+"-security"
+  name         = "${var.prefix}-security"
   organization = var.organization_name
   organization_access {
     manage_policies = true
@@ -53,7 +53,7 @@ resource "tfe_team" "secteam" {
 */
 
 resource "tfe_team" "devteam" {
-  name         = var.prefix+"-developer"
+  name         = "${var.prefix}-developer"
   organization = var.organization_name
   organization_access {
     manage_policies = true
