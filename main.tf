@@ -61,15 +61,7 @@ resource "tfe_team" "devteam" {
   }
 }
 
-/*
-resource "tfe_organization_membership" "developermembership" {
-  organization = var.organization_name
-  for_each     = var.developers
-  email        = each.key
-}
-*/
-
-resource "tfe_team_organization_members" "devteammembers" {
-  team_id = tfe_team.devteam.id
-  organization_membership_ids = [for member in var.developers : tfe_organization_membership.developermembership[member].id]
+resource "tfe_team_members" "devteammembers" {
+  team_id   = tfe_team.devteam.id
+  usernames = [for user in var.developers : user]
 }

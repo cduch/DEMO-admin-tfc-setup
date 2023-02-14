@@ -12,6 +12,6 @@ variable "prefix" {
 }
 
 variable developers {
-    description = "Set of developers"
+    description = "Set of developer usernames"
     type = set(string)
 }
