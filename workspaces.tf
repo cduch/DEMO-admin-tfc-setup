@@ -20,3 +20,8 @@ resource "tfe_workspace" "hvnworkspace" {
   }
 
 }
+
+resource "tfe_workspace_variable_set" "hvnworkspacevarset" {
+  variable_set_id = var.hcpvarsetid
+  workspace_id    = tfe_workspace.hvnworkspace.id
+}

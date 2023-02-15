@@ -22,6 +22,11 @@ variable "githuboauthtokenid" {
 
 }
 
+variable "hcpvarsetid" {
+    description = "ID of the VariableSet which has the HCP Credentials"
+    type = string
+    sensitive = true
+}
 
 variable "ghrepohvn" {
     default = "cduch/DEMO-hcp-hvn"
