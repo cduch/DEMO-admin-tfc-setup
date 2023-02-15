@@ -13,7 +13,7 @@ resource "tfe_workspace" "hvnworkspace" {
   description        = "Workspace is managed via TFC."
   allow_destroy_plan = false
   auto_apply         = true
-  project_id         = tfe_project.networkproject
+  project_id         = tfe_project.networkproject.id
   vcs_repo {
     identifier = var.ghrepohvn
     oauth_token_id = var.githuboauthtokenid
