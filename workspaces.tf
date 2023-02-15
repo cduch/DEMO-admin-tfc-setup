@@ -25,3 +25,9 @@ resource "tfe_workspace_variable_set" "hvnworkspacevarset" {
   variable_set_id = var.hcpvarsetid
   workspace_id    = tfe_workspace.hvnworkspace.id
 }
+
+resource "tfe_team_access" "hvnworkspaceaccessnetteam" {
+  access       = "admin"
+  team_id      = tfe_team.netteam.id
+  workspace_id = tfe_workspace.hvnworkspace.id
+}
