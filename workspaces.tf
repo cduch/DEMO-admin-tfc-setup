@@ -7,9 +7,9 @@
 
 
 resource "tfe_workspace" "hvnworkspace" {
-  name               = "HCP-HashiCorp_Virtual_Network"
+  name               = "HCP-HashiCorp_Virtual_Network-AWS_eu-central-1"
   organization       = var.organization_name
-  tag_names          = ["hcp", "tfcmanaged"]
+  tag_names          = ["hcp", "aws","eucentral1","tfcmanaged"]
   description        = "Workspace is managed via TFC."
   allow_destroy_plan = false
   auto_apply         = true
