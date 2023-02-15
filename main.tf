@@ -13,6 +13,10 @@ resource "tfe_project" "adminproject" {
   name = "${var.prefix}-Admin"
 }
 
+resource "tfe_project" "securityproject" {
+  name = "${var.prefix}-Security"
+}
+
 resource "tfe_project" "networkproject" {
   name = "${var.prefix}-Network"
 }
