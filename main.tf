@@ -52,6 +52,20 @@ resource "tfe_team" "adminteam" {
   }
 }
 
+/*
+*
+* NETWORK TEAM
+*
+*/
+
+resource "tfe_team" "netteam" {
+  name         = "${var.prefix}-network"
+  organization = var.organization_name
+  organization_access {
+    manage_policies = false
+    manage_policy_overrides = false
+  }
+}
 
 
 /*
