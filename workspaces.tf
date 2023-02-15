@@ -13,7 +13,6 @@ resource "tfe_workspace" "hvnworkspace" {
   description        = "Workspace is managed via TFC."
   allow_destroy_plan = false
   auto_apply         = true
-  execution_mode     = remote
   project_id         = tfe_project.networkproject
   vcs_repo {
     identifier = var.ghrepohvn
