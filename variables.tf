@@ -31,3 +31,7 @@ variable "hcpvarsetid" {
 variable "ghrepohvn" {
     default = "cduch/DEMO-hcp-hvn"
 }
+
+variable "ghrepoconsul" {
+  default ="cduch/DEMO-hcp-consul"
+}
