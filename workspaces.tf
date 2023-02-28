@@ -21,14 +21,14 @@ resource "tfe_workspace" "hcpworkspace" {
   }
 }
 
-resource "tfe_workspace_variable_set" "hcpconsulworkspacevarset" {
+resource "tfe_workspace_variable_set" "hcpvarset" {
   variable_set_id = var.hcpvarsetid
-  workspace_id    = tfe_workspace.hcpconsulworkspace.id
+  workspace_id    = tfe_workspace.hcpworkspace.id
 }
 
-resource "tfe_team_access" "hcpconsulworkspaceaccessnetteam" {
+resource "tfe_team_access" "hcpworkspaceaccessnetteam" {
   access       = "admin"
   team_id      = tfe_team.netteam.id
-  workspace_id = tfe_workspace.hcpconsulworkspace.id
+  workspace_id = tfe_workspace.hcpworkspace.id
 }
 
