@@ -50,6 +50,7 @@ resource "tfe_workspace" "hvnworkspace" {
     identifier     = var.ghrepohvn
     oauth_token_id = var.githuboauthtokenid
   }
+  remote_state_consumer_ids = [tfe_workspace.hcpconsulworkspace.id]
 
 }
 
