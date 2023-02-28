@@ -19,9 +19,6 @@ resource "tfe_workspace" "hcpconsulworkspace" {
     identifier     = var.ghrepoconsul
     oauth_token_id = var.githuboauthtokenid
   }
-  depends_on = [
-    tfe_workspace.hvnworkspace
-  ]
 }
 
 resource "tfe_workspace_variable_set" "hcpconsulworkspacevarset" {
