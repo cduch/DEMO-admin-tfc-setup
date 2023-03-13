@@ -32,3 +32,34 @@ resource "tfe_team_access" "hvnworkspaceaccessnetteam" {
   workspace_id = tfe_workspace.hvnworkspace.id
 }
 
+
+
+// Vault Workspace
+
+
+resource "tfe_workspace" "vaultworkspace" {
+  name               = "HCP_Vault"
+  organization       = var.organization_name
+  tag_names          = ["hcp", "vault","tfcmanaged"]
+  description        = "Deploys Vault in HCP. Workspace was automatically created."
+  allow_destroy_plan = true
+  auto_apply         = true
+  project_id         = tfe_project.hcpproject.id
+  vcs_repo {
+    identifier     = var.ghrepovault
+    oauth_token_id = var.githuboauthtokenid
+  }
+}
+
+resource "tfe_workspace_variable_set" "vaultvarset" {
+  variable_set_id = var.hcpvarsetid
+  workspace_id    = tfe_workspace.vaultworkspace.id
+}
+
+
+
+resource "tfe_team_access" "vaultworkspaceaccesssecteam" {
+  access       = "admin"
+  team_id      = tfe_team.secteam.id
+  workspace_id = tfe_workspace.vaultworkspace.id
+}

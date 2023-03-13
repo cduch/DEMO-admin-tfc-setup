@@ -31,3 +31,7 @@ variable "hcpvarsetid" {
 variable "ghrepohvn" {
     default = "cduch/DEMO-hcp-hvn"
 }
+
+variable "ghrepovault" {
+    default = "cduch/DEMO-hcp-vault"
+}
