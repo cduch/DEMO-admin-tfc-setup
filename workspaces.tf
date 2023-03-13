@@ -15,6 +15,7 @@ resource "tfe_workspace" "hvnworkspace" {
   allow_destroy_plan = true
   auto_apply         = true
   project_id         = tfe_project.hcpproject.id
+  global_remote_state = true
   vcs_repo {
     identifier     = var.ghrepohvn
     oauth_token_id = var.githuboauthtokenid
