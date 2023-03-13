@@ -28,6 +28,6 @@ variable "hcpvarsetid" {
     sensitive = true
 }
 
-variable "ghrepohcp" {
-    default = "cduch/DEMO-hcp-setup"
+variable "ghrepohvn" {
+    default = "cduch/DEMO-hcp-hvn"
 }
