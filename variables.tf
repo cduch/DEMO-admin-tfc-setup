@@ -35,3 +35,7 @@ variable "ghrepohvn" {
 variable "ghrepovault" {
     default = "cduch/DEMO-hcp-vault"
 }
+
+variable "ghrepoconsul" {
+    default = "cduch/DEMO-hcp-consul"
+}
